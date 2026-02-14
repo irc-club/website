@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRC Club</title>
+  <meta name="description" content="IRC Club — A Security Research Community">
+  <meta name="keywords" content="IRC Club, security research, cybersecurity, infosec, security community">
+  <meta name="author" content="IRC Club">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IRC Club">
+  <meta property="og:description" content="IRC Club — A Security Research Community">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IRC Club">
+  <meta name="twitter:description" content="IRC Club — A Security Research Community">
+  <meta name="twitter:image" content="/logo.png">
+
+  <link rel="icon" type="image/png" href="/logo.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --neon-magenta: #ff2a6d;
+      --neon-cyan: #05d9e8;
+      --dark: #0a0a0f;
+      --darker: #05050a;
+    }
+
+    body {
+      background: var(--darker);
+      color: #e0e0e0;
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Scanline overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Subtle grid background */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(5, 217, 232, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5, 217, 232, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+
+    .logo {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 20px rgba(5, 217, 232, 0.3))
+              drop-shadow(0 0 60px rgba(255, 42, 109, 0.15));
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    .title {
+      font-size: 1.6rem;
+      letter-spacing: 0.5em;
+      text-transform: lowercase;
+      color: var(--neon-cyan);
+      text-shadow:
+        0 0 10px rgba(5, 217, 232, 0.5),
+        0 0 40px rgba(5, 217, 232, 0.15);
+      position: relative;
+    }
+
+    .title::after {
+      content: '_';
+      animation: blink 1s step-end infinite;
+      color: var(--neon-magenta);
+    }
+
+    /* Thin accent line */
+    .line {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+      opacity: 0.4;
+    }
+
+    @keyframes pulse {
+      0%, 100% { filter: drop-shadow(0 0 20px rgba(5, 217, 232, 0.3)) drop-shadow(0 0 60px rgba(255, 42, 109, 0.15)); }
+      50% { filter: drop-shadow(0 0 30px rgba(5, 217, 232, 0.5)) drop-shadow(0 0 80px rgba(255, 42, 109, 0.25)); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        width: 100px;
+        height: 100px;
+      }
+      .title {
+        font-size: 1.2rem;
+        letter-spacing: 0.4em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/logo.png" alt="IRC Club" class="logo">
+    <div class="line"></div>
+    <h1 class="title">irc club</h1>
+  </div>
+</body>
+</html>
