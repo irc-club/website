@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | IRC Club</title>
+  <meta name="description" content="About IRC Club">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --neon-magenta: #ff2a6d;
+      --neon-cyan: #05d9e8;
+      --darker: #05050a;
+    }
+
+    body {
+      background: var(--darker);
+      color: #e0e0e0;
+      font-family: 'Share Tech Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(5, 217, 232, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(5, 217, 232, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      padding: 1.2rem 1.4rem 0.9rem;
+      z-index: 20;
+    }
+
+    .nav-btn {
+      border: 1px solid rgba(5, 217, 232, 0.55);
+      background: rgba(5, 217, 232, 0.08);
+      color: var(--neon-cyan);
+      font-family: 'Share Tech Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.88rem;
+      padding: 0.5rem 0.9rem;
+      text-decoration: none;
+      transition: border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .nav-btn:hover,
+    .nav-btn:focus-visible,
+    .nav-btn[aria-current="page"] {
+      border-color: var(--neon-magenta);
+      background: rgba(255, 42, 109, 0.14);
+      color: #fff;
+      outline: none;
+    }
+
+    .content-box {
+      width: min(760px, calc(100vw - 2rem));
+      border: 1px solid rgba(5, 217, 232, 0.45);
+      background: rgba(5, 217, 232, 0.06);
+      padding: 2rem;
+      z-index: 10;
+      box-shadow:
+        0 0 24px rgba(5, 217, 232, 0.14),
+        0 0 50px rgba(255, 42, 109, 0.08);
+    }
+
+    h1 {
+      color: var(--neon-cyan);
+      font-size: 1.4rem;
+      letter-spacing: 0.25em;
+      text-transform: lowercase;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 0 14px rgba(5, 217, 232, 0.35);
+    }
+
+    p {
+      line-height: 1.65;
+      color: #d6d6d6;
+      font-size: 0.98rem;
+    }
+
+    @media (max-width: 480px) {
+      .top-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .content-box {
+        padding: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav" aria-label="Main navigation">
+    <a class="nav-btn" href="index.html">Home</a>
+    <a class="nav-btn" href="about.html" aria-current="page">About</a>
+    <a class="nav-btn" href="mission.html">Mission</a>
+  </nav>
+
+  <main class="content-box">
+    <h1>about</h1>
+    <p>
+      We (IRCD) are a security research community focused on tracking internet-based threats.
+    </p>
+  </main>
+</body>
+</html>
